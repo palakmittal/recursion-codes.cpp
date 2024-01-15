@@ -1,0 +1,26 @@
+// this code include how to find minimum element from given array by recursion
+#include<iostream>
+#include<cmath>
+using namespace std;
+int minelement(int arr[],int index,int size){
+
+//base case
+if(index==size-1){
+return arr[index];
+}
+
+//recursive case
+return min(arr[index],minelement(arr, index+1,size-1);
+}
+
+int main(){
+
+int arr[]={3,7,2,1,8};
+int index=0, size=5;
+
+int ans=minelement(arr, index+1,size-1);
+cout<<ans;
+
+
+return 0;
+}
