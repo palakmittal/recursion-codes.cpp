@@ -1,0 +1,30 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+void uppertolower(string &str, int index,int size){
+    if(index==size) return;
+    char c=str[index];
+    str[index]='a'+c-'A';
+    uppertolower(str, 1+index, size);
+}
+
+void lowertoupper(string &str, int index,int size){
+    if(index==size) return;
+    char c=str[index];
+    str[index]='A'+c-'a';
+    lowertoupper(str, 1+index, size);
+}
+
+int main() {
+    string str1="apple";
+    string str2="MANGO";
+    
+    lowertoupper(str1,0,5);
+    cout<<str1<<endl;
+    
+    uppertolower(str2,0,5);
+    cout<<str2<<endl;
+    
+    return 0;
+}
