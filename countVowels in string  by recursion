@@ -1,0 +1,25 @@
+// countVowels in string  by recursion
+#include <iostream>
+#include<string>
+using namespace std;
+
+int countVowels(string arr,int index){
+    if(index==-1){
+        return 0;
+    }
+    if(arr[index]=='a'||arr[index]=='e'||arr[index]=='i'||arr[index]=='o'||arr[index]=='u'||arr[index]=='A'||arr[index]=='E'||arr[index]=='I'||arr[index]=='O'||arr[index]=='U'){
+        return 1+countVowels(arr,index-1);
+    }
+    else
+    return countVowels(arr,index-1);
+}
+
+int main() {
+   
+   string arr1="elephant And Sugarcane";
+   int arr1size=22;
+  
+   cout<<countVowels(arr1,arr1size-1);
+   
+    return 0;
+}
