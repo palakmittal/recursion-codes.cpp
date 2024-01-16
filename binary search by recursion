@@ -1,0 +1,22 @@
+// binary search by recursion
+#include <iostream>
+using namespace std;
+
+int binarysearch(int arr[],int start,int end,int target){
+    int mid=start+(end-start)/2;
+    if(start>end) return -1;
+    if(arr[mid]==target) return mid;
+    else if(arr[mid]<target) return binarysearch(arr,mid+1,end,target);
+    else return binarysearch(arr,0,mid-1,target);
+}
+
+int main() {
+   int arr[]={3,7,8,9,11,13,15,17,19};
+   int size=9;
+   int target=7;
+   cout<<binarysearch(arr,0,size-1,target);
+    return 0;
+}
+
+
+// time complexity is o(logn)
