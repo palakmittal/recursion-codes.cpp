@@ -1,0 +1,18 @@
+void tower_of_hanoi(int N,int source,int help,int dest){
+    if(N==1){
+        cout<<"move disk "<<N<<" from rod "<<source<<" to rod "<<dest<<endl;
+        return;
+    }
+    tower_of_hanoi(N-1,source,dest,help);
+    cout<<"move disk "<<N<<" from rod "<<source<<" to rod "<<dest<<endl;
+    tower_of_hanoi(N-1,help,source,dest);
+}
+
+    // avoid space at the starting of the string in "move disk....."
+    long long toh(int N, int from, int to, int aux) {
+        // Your code here
+        
+        tower_of_hanoi(N,1,2,3);
+        
+        return pow(2,N)-1;
+    }
