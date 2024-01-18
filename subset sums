@@ -1,0 +1,39 @@
+// Subset Sums by recursion
+#include <iostream>
+#include<vector>
+using namespace std;
+
+// function jab hame subset ke sum ko kahin store  karna ho
+void pprint_subset_sum(int arr[],int index,int n,int sum, vector<int>&ans){
+    if(index==n){
+        ans.push_back(sum);  
+        return;
+    }
+    pprint_subset_sum(arr,index+1,n,sum,ans); // if number at that index not //included
+    pprint_subset_sum(arr,index+1,n,sum+arr[index],ans);  // if number at //that index is included
+}
+
+
+// function jab hame subset ke sum ko kahin store na karna ho
+void print_subset_sum(int arr[],int index,int n,int sum){
+    if(index==n){
+        cout<<sum<<endl;  
+        return;
+    }
+    print_subset_sum(arr,index+1,n,sum); // if number at that index not included
+    print_subset_sum(arr,index+1,n,sum+arr[index]);     // if number at that index is included
+}
+
+int main() {
+  int arr[]={3,2,5};
+  int n=3,sum=0,index=0;
+  print_subset_sum(arr,index,n,sum);
+
+  vector<int>ans;
+  pprint_subset_sum(arr,index,n,sum,ans);
+  for(int i=0;i<ans.size();i++){
+    cout<<ans[i]<<" ";
+    }
+
+    return 0;
+}
